@@ -18,9 +18,12 @@ ramanibkothadia@gmail.com | San Francisco Bay Area
 \makecvtitle %% This is a custom command constructing the CV title from \cvname, \cvpersonalinfo
 \section{Programming Skills \& Technologies}
 \smallskip
-\begin{description}[widest=Intermediate]
-\item[Intermediate] Python, Bash, WDL, Docker, Git, Elasticsearch, Logstash, Filebeat, ReactJS, Javascript, MySQL, Linux, R, HTML/CSS
-\item[Novice] Google Cloud Platform, C/C++, Typescript, CUDA, PThreads, OpenMP, MPI
+\begin{description}[widest=Workflow/HPC]
+\item[Languages] Python, Bash, JavaScript, R, SQL, HTML/CSS, WDL
+\item[Web/API] React, Flask, REST APIs
+\item[Data/Observability] Elasticsearch, Filebeat, Logstash, MySQL
+\item[Workflow/HPC] WDL, Cromwell, Linux, Docker, Git
+\item[Additional] Google Cloud Platform, TypeScript, C/C++, CUDA, Pthreads, OpenMP, MPI
 \end{description}
 \vspace{\parskip}%
 
@@ -28,42 +31,41 @@ ramanibkothadia@gmail.com | San Francisco Bay Area
 \smallskip
 %% Another custom command provide by scimisc-cv.sty.
 %% First two argumetns are typeset on the first line in bold; 3rd and 4th arguments are typset on second line in italics. 2nd, 3rd and 4th arguments are OPTIONAL
-\cvsubsection{Lawrence Berkeley National Laboratory}[Jun 2020 - Present]
+\cvsubsection{Lawrence Berkeley National Laboratory}[Jun 2020 -- Present]
 [Joint Genome Institute $\mid$ Software Developer][]
 \smallskip
 \begin{itemize}[label=$\circ$,leftmargin=2em]
-\item Contributed towards JAWS (JGI Analysis Workflow Service) development in \underline{\textbf{python}}.
-\item Developed and maintained \underline{\textbf{ReactJS}}-based JAWS dashboard user interface for user jobs and performance metrics visualizations.
-\item Developed JAWS' performance metrics collection infrastructure with \underline{\textbf{Elasticsearch}}, Logstash, and Filebeat.
-\item Developed a \underline{\textbf{RESTful API}} service with \underline{\textbf{Flask}} for the JAWS dashboard to access to performance metrics .
-\item Developed tailored \underline{\textbf{python}} bioinformatics tools for multiple collaborators to search query sequences with Genesearch and JackHMMER, query matched targets in Uniprot, and mine Uniprot XMLs for project-specific annotations and summaries.
-\item Implemented and deployed an email notification service for JGI archive and metadata organizer (JAMO) on NERSC's spin Rancher2 platform using \underline{\textbf{python}} and \underline{\textbf{Docker}}.
-\item Re-configured, refactored, and tested users' \underline{\textbf{WDLs}} for their application to JAWS.
-\item Designed a batching system to efficiently process $>$20k input mzML files through the user's workflow with JAWS, automating detection and re-submission of inputs with timed-out shards in \underline{\textbf{python}} and \underline{\textbf{bash}}.
+\item Contribute to the development and maintenance of the \textbf{JGI Analysis Workflow Service (JAWS)}, a platform for executing reproducible scientific workflows across high-performance computing environments.
+\item Designed and implemented a distributed performance-metrics collection infrastructure using \textbf{Elasticsearch} and \textbf{Filebeat} across JAWS computing environments.
+\item Developed \textbf{REST APIs} for querying workflow performance and operational data, providing the data layer for dashboard monitoring and visualization.
+\item Developed and maintained a \textbf{React} dashboard for centralized monitoring and visualization of workflow submissions, system load, and performance metrics.
+\item Developed automated bioinformatics pipelines for large-scale acquisition, curation, and processing of protein sequences from \textbf{UniProt}, supporting phylogenetic analysis of \textbf{2,938 proteins across 90 species}.
+\item Adapted, refactored, and validated scientific workflows written in \textbf{WDL} for execution through JAWS across heterogeneous computing environments.
+\item Implemented and deployed a containerized email-notification service for the JGI Archive and Metadata Organizer (JAMO) using \textbf{Python} and \textbf{Docker}.
 
 \end{itemize}
 \vspace{\parskip}%
 
-\cvsubsection{Broad Institute of MIT and Harvard}[Aug 2018 - May 2020][Proteomics Platform $\mid$ Software Developer][]
+\cvsubsection{Broad Institute of MIT and Harvard}[Aug 2018 -- May 2020][Proteomics Platform $\mid$ Software Developer][]
 \smallskip
 \begin{itemize}[label=$\circ$,leftmargin=2em]
-\item Executed PANOPLY: a cloud-based proteogenomic data analysis pipeline on 4+ multi-omic CPTAC data-sets.
-\item Modularized the pipeline by replacing its monolithic \underline{\textbf{Docker}} with loosely coupled and independent \underline{\textbf{Dockers}}. 
-\item Streamlined pipeline's launch procedure by minimizing manual data-wrangling and automating workspace setup on Terra: a Google Cloud based platform, with \underline{\textbf{R}}, \underline{\textbf{bash}}, \underline{\textbf{GNU make}}, and \underline{\textbf{Jupyter}} Notebook.
-\item Developed a \underline{\textbf{python}} pipeline testing tool to report significant changes in intermediate output files and log aberrant behavior.
-\item Created a \underline{\textbf{bash}} tool to standardize module releases and to automatically cascade updates to dependent Dockers and WDLs. 
-\item Added raw proteomics characterization by stitching MS-Fragger, MS-Philosopher, and TMT-Integrator into a module.
+\item Contributed to the development and application of \textbf{PANOPLY}, a cloud-based platform for reproducible proteogenomic analysis, including analyses of four CPTAC multi-omic cancer cohorts.
+\item Refactored PANOPLY's monolithic container architecture into standardized, independently versioned Docker modules.
+\item Engineered an automated release system for more than \textbf{15 interdependent modules}, propagating updates across dependent Docker images and WDL workflows.
+\item Developed a \textbf{Jupyter}-based interface and supporting automation for data preparation and workspace configuration on \textbf{Terra}.
+\item Developed a \textbf{Python} testing framework to identify significant changes in intermediate pipeline outputs and flag anomalous behavior.
+\item Integrated \textbf{MSFragger}, \textbf{Philosopher}, and \textbf{TMT-Integrator} into a reproducible PANOPLY module for raw mass-spectrometry proteomics characterization.
 \end{itemize}
 \vspace{\parskip}%
 
 %% An example of leaving an argument empty
-\cvsubsection{inDNA Research Labs Pvt. Ltd.}[Jul 2015 - Aug 2016][Software Developer][]
+\cvsubsection{inDNA Research Labs Pvt. Ltd.}[Jul 2015 -- Aug 2016][Software Developer][]
 \smallskip
 \begin{itemize}[label=$\circ$,leftmargin=2em]
-\item Stitched several bioinformatics tools into a \underline{\textbf{python}} pipeline for Next Generation Sequencing data analysis.
-\item Developed a web-based workbench for clinicians with \underline{\textbf{Java/JSF}} and designed its user-interface with \underline{\textbf{HTML/CSS}}.
-\item Designed and implemented a relational database in \underline{\textbf{MySQL}} for storing TNBC patient and clinician data.
-\item Retrieved `actionable drug' annotations per variant from COSMIC, EmVClass, Clinvar, Clinvitae data-sets, and harmonized them into a personalised report for use by oncologists with \underline{\textbf{python}}.  
+\item Developed a \textbf{Python} pipeline integrating multiple bioinformatics tools for next-generation sequencing data analysis.
+\item Developed a web-based workbench for clinicians with \textbf{Java/JSF} and designed its user interface with \textbf{HTML/CSS}.
+\item Designed and implemented a relational database in \textbf{MySQL} for storing TNBC patient and clinician data.
+\item Retrieved clinically relevant variant and therapeutic annotations from COSMIC, EmVClass, ClinVar, ClinVitae, and UniProt datasets and harmonized them into personalized reports for oncologists using \textbf{Python}.
 \end{itemize}
 \vspace{\parskip}% 
 
@@ -73,27 +75,27 @@ ramanibkothadia@gmail.com | San Francisco Bay Area
 \end{itemize}
 \vspace{\parskip}%
 
-\section{Key Publications}
+\section{Selected Publications}
 \begin{itemize}[label=$\circ$,leftmargin=2em]
-\item Cassol D, Clum A, Froula J, Kirton E, \underline{\textbf{Kothadia R}}, et al. \textit{"Supporting FAIR scientific workflows with the JGI Analysis Workflow Service (JAWS)."} IEEE International Conference on eScience. 2025:141-149.
+\item Cassol D, Clum A, Froula J, Kirton E, \textbf{Kothadia R}, et al. \textit{Supporting FAIR scientific workflows with the JGI Analysis Workflow Service (JAWS).} IEEE International Conference on eScience. 2025:141--149.
 \textit{doi:10.1109/eScience65000.2025.00025}
-\item Mani DR, Maynard M, \underline{\textbf{Kothadia R}}, et al. \textit{"PANOPLY: a cloud-based platform for automated and reproducible proteogenomic data analysis."} Nat Methods. 2021;18(6):580-582.
+\item Mani DR, Maynard M, \textbf{Kothadia R}, et al. \textit{PANOPLY: a cloud-based platform for automated and reproducible proteogenomic data analysis.} Nat Methods. 2021;18(6):580--582.
 \textit{doi:10.1038/s41592-021-01176-6}
-\item Koper K, Han SW, \underline{\textbf{Kothadia R}}, et al. \textit{"Multisubstrate specificity shaped the complex evolution of the aminotransferase family across the tree of life."} Proc Natl Acad Sci U S A. 2024;121(26):e2405524121.
+\item Koper K, Han SW, \textbf{Kothadia R}, et al. \textit{Multisubstrate specificity shaped the complex evolution of the aminotransferase family across the tree of life.} Proc Natl Acad Sci U S A. 2024;121(26):e2405524121.
 \textit{doi:10.1073/pnas.2405524121}
-\item Bader J, Belak J, Bement M, et al. (including \underline{\textbf{Kothadia R}}). \textit{"Novel approaches toward scalable composable workflows in hyper-heterogeneous computing environments."} Proc SC Workshops. 2023:2097-2108.
+\item Bader J, Belak J, Bement M, et al. (including \textbf{Kothadia R}). \textit{Novel approaches toward scalable composable workflows in hyper-heterogeneous computing environments.} Proceedings of the SC '23 Workshops of the International Conference on High Performance Computing, Network, Storage, and Analysis. 2023:2097--2108.
 \textit{doi:10.1145/3624062.3626283}
 \end{itemize}
 \vspace{\parskip}%
 \section{Other Publications}
 \begin{itemize}[label=$\circ$,leftmargin=2em]
-\item Gillette MA, Satpathy S, Cao S, et al. (including \underline{\textbf{Kothadia RB}}). \textit{"Proteogenomic characterization reveals therapeutic vulnerabilities in lung adenocarcinoma."} Cell. 2020;182(1):200-225.e35.
+\item Gillette MA, Satpathy S, Cao S, et al. (including \textbf{Kothadia RB}). \textit{Proteogenomic characterization reveals therapeutic vulnerabilities in lung adenocarcinoma.} Cell. 2020;182(1):200--225.e35.
 \textit{doi:10.1016/j.cell.2020.06.013}
-\item Krug K, Jaehnig EJ, Satpathy S, et al. (including \underline{\textbf{Kothadia RB}}). \textit{"Proteogenomic landscape of breast cancer tumorigenesis and targeted therapy."} Cell. 2020;183(5):1436-1456.e31.
+\item Krug K, Jaehnig EJ, Satpathy S, et al. (including \textbf{Kothadia RB}). \textit{Proteogenomic landscape of breast cancer tumorigenesis and targeted therapy.} Cell. 2020;183(5):1436--1456.e31.
 \textit{doi:10.1016/j.cell.2020.10.036}
-\item Dou Y, Kawaler EA, Cui Zhou D, et al. (including \underline{\textbf{Kothadia R}}). \textit{"Proteogenomic characterization of endometrial carcinoma."} Cell. 2020;180(4):729-748.e26.
+\item Dou Y, Kawaler EA, Cui Zhou D, et al. (including \textbf{Kothadia R}). \textit{Proteogenomic characterization of endometrial carcinoma.} Cell. 2020;180(4):729--748.e26.
 \textit{doi:10.1016/j.cell.2020.01.026}
-\item Wang LB, Karpova A, Gritsenko MA, et al. (including \underline{\textbf{Kothadia RB}}). \textit{"Proteogenomic and metabolomic characterization of human glioblastoma."} Cancer Cell. 2021;39(4):509-528.e20.
+\item Wang LB, Karpova A, Gritsenko MA, et al. (including \textbf{Kothadia RB}). \textit{Proteogenomic and metabolomic characterization of human glioblastoma.} Cancer Cell. 2021;39(4):509--528.e20.
 \textit{doi:10.1016/j.ccell.2021.01.006}
 \end{itemize}
 \vspace{\parskip}%
@@ -101,10 +103,10 @@ ramanibkothadia@gmail.com | San Francisco Bay Area
 \section{Education}
 \smallskip
 \cvsubsection{New York University}[M.S. Computer Science]
-[Courant Institute of Mathematical Sciences][2016 - 2018]
+[Courant Institute of Mathematical Sciences][2016 -- 2018]
 \medskip
 \cvsubsection{Savitribai Phule Pune University}[B.E. Information Technology]
-[Pune Institute of Computer Technology][2011 - 2015]
+[Pune Institute of Computer Technology][2011 -- 2015]
 \vspace{\parskip}%
 
 \end{document}
