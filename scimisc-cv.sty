@@ -22,7 +22,9 @@
 \RequirePackage{textcase}
 \RequirePackage{xparse}
 \RequirePackage{needspace}
+\RequirePackage{url}
 \RequirePackage[compact,small,explicit]{titlesec}
+\urlstyle{same}
 
 \def\scimisc@cvname{}
 \def\scimisc@cvpersonalinfo{}
@@ -41,16 +43,14 @@
 \newcommand{\cvpersonalinfofont}{\ttfamily\normalsize} % Monospace, smaller for personal info
 
 \newcommand{\makecvtitle}{%
-  \begin{center}
-    \makebox[\linewidth][c]{%
-      {\cvnamefont\MakeTextUppercase{\scimisc@cvname}}%
-      \hfill % Pushes personal info to the right
-      {\cvpersonalinfofont\scimisc@cvpersonalinfo}%
-    }
-  \end{center}
-  \vskip 5pt % Adjust the vertical space before the line
-  \hrule height 0.5pt % Adds a horizontal line with desired thickness
-  \vskip 5pt % Adjust the vertical space after the line
+  \noindent\makebox[\linewidth][c]{%
+    {\cvnamefont\MakeTextUppercase{\scimisc@cvname}}%
+    \hfill
+    {\cvpersonalinfofont\scimisc@cvpersonalinfo}%
+  }%
+  \par\vspace{5pt}
+  \hrule height 0.4pt
+  \vspace{3pt}
 }
 
 
@@ -64,20 +64,26 @@
 %}
 
 \NewDocumentCommand{\cvsubsection}{m o o o}{%
-  %\vspace{\parskip}%
-  \needspace{4\baselineskip}%
-  \textbf{#1}%
-  \IfValueT{#2}{\hfill\textbf{#2}}%
-  \IfValueT{#3}{\IfValueT{#4}{\\}}%
+  \needspace{5\baselineskip}%
+  \noindent\textbf{#1}%
+  \IfValueT{#2}{\hfill #2}%
+  \par
   \IfValueT{#3}{\emph{#3}}%
-  \IfValueT{#4}{\hfill\emph{#4}}
-  \par\vspace{-\parskip}
+  \IfValueT{#4}{\hfill\emph{#4}}%
+  \par\vspace{1pt}
 }
 
-\geometry{a4paper,margin=0.5in}
+\geometry{a4paper,margin=0.75in}
 \titleformat{\section}
-  {\bfseries\rmfamily\large}{\thesection}{0pt}{\MakeTextUppercase{#1}}[{\titlerule[0.6pt]}]
-\setlist{leftmargin=*,nosep}
+  {\bfseries\rmfamily\large}{\thesection}{0pt}{\MakeTextUppercase{#1}}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\titleformat{\subsection}
+  {\bfseries\normalsize}{\thesubsection}{0pt}{#1}
+\titlespacing*{\subsection}{0pt}{7pt}{2pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\setlist[itemize]{label=\textbullet,leftmargin=1.4em,itemsep=2pt,topsep=2pt,parsep=0pt,partopsep=0pt}
+\AtBeginDocument{\fontsize{10.5pt}{12.5pt}\selectfont}
 
 \pagestyle{empty}
 \setcounter{secnumdepth}{0}
