@@ -23,8 +23,13 @@
 \RequirePackage{xparse}
 \RequirePackage{needspace}
 \RequirePackage{url}
+\RequirePackage[normalem]{ulem}
+\RequirePackage[hidelinks]{hyperref}
 \RequirePackage[compact,small,explicit]{titlesec}
 \urlstyle{same}
+
+\let\cvplaintextbf\textbf
+\renewcommand{\textbf}[1]{\uline{\cvplaintextbf{#1}}}
 
 \def\scimisc@cvname{}
 \def\scimisc@cvpersonalinfo{}
@@ -48,9 +53,9 @@
     \hfill
     {\cvpersonalinfofont\scimisc@cvpersonalinfo}%
   }%
-  \par\vspace{5pt}
+  \par\vspace{1pt}
   \hrule height 0.4pt
-  \vspace{3pt}
+  \vspace{0pt}
 }
 
 
@@ -64,26 +69,27 @@
 %}
 
 \NewDocumentCommand{\cvsubsection}{m o o o}{%
-  \needspace{5\baselineskip}%
+  \needspace{4\baselineskip}%
   \noindent\textbf{#1}%
   \IfValueT{#2}{\hfill #2}%
   \par
   \IfValueT{#3}{\emph{#3}}%
   \IfValueT{#4}{\hfill\emph{#4}}%
-  \par\vspace{1pt}
+  \par
 }
 
-\geometry{a4paper,margin=0.75in}
+\geometry{a4paper,margin=0.65in}
 \titleformat{\section}
   {\bfseries\rmfamily\large}{\thesection}{0pt}{\MakeTextUppercase{#1}}
-\titlespacing*{\section}{0pt}{10pt}{4pt}
+\titlespacing*{\section}{0pt}{9pt}{4pt}
 \titleformat{\subsection}
   {\bfseries\normalsize}{\thesubsection}{0pt}{#1}
-\titlespacing*{\subsection}{0pt}{7pt}{2pt}
+\titlespacing*{\subsection}{0pt}{4pt}{1pt}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{2pt}
-\setlist[itemize]{label=\textbullet,leftmargin=1.4em,itemsep=2pt,topsep=2pt,parsep=0pt,partopsep=0pt}
-\AtBeginDocument{\fontsize{10.5pt}{12.5pt}\selectfont}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{1em}
+\setlist[itemize]{label=\textbullet,leftmargin=1.3em,itemsep=2pt,topsep=2pt,parsep=0pt,partopsep=0pt}
+\AtBeginDocument{\fontsize{11pt}{13pt}\selectfont}
 
 \pagestyle{empty}
 \setcounter{secnumdepth}{0}
