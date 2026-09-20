@@ -1,82 +1,93 @@
-\documentclass{article}
+\documentclass[11pt]{article}
 \usepackage{scimisc-cv}
 
-\title{Scismic's Recommended CV for Biotech and Pharma Positions}
-\author{Scismic: The Talent Matching Platform for The Life Sciences (www.scismic.com)}
-\date{May 2020}
+\newcommand{\LinkedInURL}{https://www.linkedin.com/in/ramani-kothadia/}
+\newcommand{\GoogleScholarURL}{https://scholar.google.com/citations?user=S8UeT20AAAAJ\&hl=en}
 
-%% These are custom commands defined in scimisc-cv.sty
 \cvname{Ramani B. Kothadia}
-\cvpersonalinfo{
-ramanibkothadia@gmail.com | San Francisco Bay Area
+\cvpersonalinfo{%
+  \cvcontactlink{mailto:ramanibkothadia@gmail.com}{ramanibkothadia@gmail.com}
+  \hspace{1em}
+  \cviconlink{\LinkedInURL}{\faLinkedinIn}
+  \hspace{0.85em}
+  \cviconlink{\GoogleScholarURL}{\faGraduationCap}%
 }
 
 \begin{document}
 
-% \maketitle %% This is LaTeX's default title constructed from \title,\author,\date
+\makecvtitle
 
-\makecvtitle %% This is a custom command constructing the CV title from \cvname, \cvpersonalinfo
 \section{Work Experience}
-%% Another custom command provide by scimisc-cv.sty.
-%% First two argumetns are typeset on the first line in bold; 3rd and 4th arguments are typset on second line in italics. 2nd, 3rd and 4th arguments are OPTIONAL
-\cvsubsection{Lawrence Berkeley National Laboratory}[Jun 2020 -- Present]
-[Software Developer, DOE Joint Genome Institute]
+
+\cvsubsection{Lawrence Berkeley National Laboratory}[Jun 2020 \textendash{} Present]
+  [Software Developer, DOE Joint Genome Institute]
 \begin{itemize}
-\item Contributed to the development and maintenance of \href{https://jaws-docs.jgi.doe.gov/en/latest/Intro/how_jaws.html}{\textbf{JAWS (JGI Analysis Workflow Service)}}, a \textbf{Python}-based platform for reproducible scientific workflows across HPC environments.
-\item Developed and maintained a distributed performance-metrics collection system across JAWS compute sites using \textbf{HTCondor logs, Filebeat, and Elasticsearch}.
-\item Developed a \textbf{React} dashboard for monitoring workflow submissions, system load, and performance metrics.
-\item Developed a \textbf{Flask REST API} to serve workflow performance metrics to the JAWS dashboard.
-\item Developed a custom \textbf{Python} bioinformatics pipeline to acquire, curate, and process protein sequences at scale for phylogenetic analysis of \cvplaintextbf{2,938 proteins across 90 species}.
-\item Adapted, refactored, and validated user workflows in \textbf{WDL} for execution through JAWS.
-\item Implemented and deployed a containerized email notification service for the JGI Archive and Metadata Organizer (JAMO) on NERSC's Rancher platform using \textbf{Python and Docker}.
-\item Designed a \textbf{Python/Bash} batching system to process more than \cvplaintextbf{20,000 mzML files} through JAWS, automatically resubmitting inputs whose shards timed out.
+  \item Contributed to the development and maintenance of \cvlink{https://jaws-docs.jgi.doe.gov/en/latest/Intro/how_jaws.html}{\cvstrong{JAWS (JGI Analysis Workflow Service)}}, a \cvstrong{Python}-based platform for reproducible scientific workflows across HPC environments.
+  \item Developed and maintained a distributed performance-metrics collection system across JAWS compute sites using \cvstrong{HTCondor logs, Filebeat, and Elasticsearch}.
+  \item Developed a \cvstrong{React} dashboard for monitoring workflow submissions, system load, and performance metrics.
+  \item Developed a \cvstrong{Flask REST API} to serve workflow performance metrics to the JAWS dashboard.
+  \item Developed a custom \cvstrong{Python} bioinformatics pipeline to acquire, curate, and process protein sequences at scale for phylogenetic analysis of \cvstrong{2,938 proteins across 90 species}.
+  \item Adapted, refactored, and validated user workflows in \cvstrong{WDL} for execution through JAWS.
+  \item Implemented and deployed a containerized email notification service for the JGI Archive and Metadata Organizer (JAMO) on NERSC's Rancher platform using \cvstrong{Python and Docker}.
+  \item Designed a \cvstrong{Python/Bash} batching system to process more than \cvstrong{20,000 mzML files} through JAWS, automatically resubmitting inputs whose shards timed out.
 \end{itemize}
 
-\cvsubsection{Broad Institute of MIT and Harvard}[Aug 2018 -- May 2020][Software Developer, Proteomics Platform]
+\jobseparator
+\cvsubsection{Broad Institute of MIT and Harvard}[Aug 2018 \textendash{} May 2020]
+  [Software Developer, Proteomics Platform]
 \begin{itemize}
-\item Contributed to the development of \href{https://github.com/broadinstitute/PANOPLY}{\textbf{PANOPLY}}, a cloud-based platform for reproducible proteogenomic analysis, including applications to four CPTAC multi-omic cancer cohorts.
-\item Refactored PANOPLY's monolithic \textbf{Docker} architecture into loosely coupled, independently versioned modules.
-\item Engineered an automated release system for more than \cvplaintextbf{15 interdependent modules}, propagating updates across dependent \textbf{Docker images and WDL workflows}.
-\item Streamlined PANOPLY launches by automating workspace setup and reducing manual data wrangling on \textbf{Terra} using \textbf{R}, \textbf{Bash}, and \textbf{Jupyter}.
-\item Developed a \textbf{Python} testing tool to identify changes in intermediate outputs and flag anomalous behavior.
-\item Integrated \textbf{MSFragger}, \textbf{Philosopher}, and \textbf{TMT-Integrator} into a reproducible PANOPLY module for raw mass-spectrometry proteomics characterization.
+  \item Contributed to the development of \cvlink{https://github.com/broadinstitute/PANOPLY}{\cvstrong{PANOPLY}}, a cloud-based platform for reproducible proteogenomic analysis, including applications to four CPTAC multi-omic cancer cohorts.
+  \item Refactored PANOPLY's monolithic \cvstrong{Docker} architecture into loosely coupled, independently versioned modules.
+  \item Engineered an automated release system for more than \cvstrong{15 interdependent modules}, propagating updates across dependent \cvstrong{Docker images and WDL workflows}.
+  \item Streamlined PANOPLY launches by automating workspace setup and reducing manual data wrangling on \cvstrong{Terra} using \cvstrong{R}, \cvstrong{Bash}, and \cvstrong{Jupyter}.
+  \item Developed a \cvstrong{Python} testing tool to identify changes in intermediate outputs and flag anomalous behavior.
+  \item Integrated \cvstrong{MSFragger}, \cvstrong{Philosopher}, and \cvstrong{TMT-Integrator} into a reproducible PANOPLY module for raw mass-spectrometry proteomics characterization.
 \end{itemize}
 
-%% An example of leaving an argument empty
-\cvsubsection{inDNA Research Labs Pvt. Ltd.}[Jul 2015 -- Aug 2016][Software Developer]
+\jobseparator
+\cvsubsection{inDNA Research Labs Pvt. Ltd.}[Jul 2015 \textendash{} Aug 2016][Software Developer]
 \begin{itemize}
-\item Developed a \textbf{Python} pipeline integrating bioinformatics tools for next-generation sequencing analysis.
-\item Developed a web-based clinical workbench with \textbf{Java/JSF} and designed its user interface with \textbf{HTML/CSS}.
-\item Designed and implemented a relational database in \textbf{MySQL} for storing TNBC patient and clinician data.
-\item Retrieved clinically relevant variant and therapeutic annotations from COSMIC, EmVClass, ClinVar, ClinVitae, and UniProt and harmonized them into personalized oncology reports using \textbf{Python}.
-\end{itemize}
-
-\section{Selected Publications}
-\begin{itemize}
-\item Cassol D, Clum A, Froula J, Kirton E, \textbf{Kothadia R}, et al. \href{https://doi.org/10.1109/eScience65000.2025.00025}{Supporting FAIR scientific workflows with the JGI Analysis Workflow Service (JAWS).} \textit{IEEE International Conference on eScience}, 2025, 141--149. doi:\nolinkurl{10.1109/eScience65000.2025.00025}.
-\item Mani DR, Maynard M, \textbf{Kothadia R}, et al. \href{https://doi.org/10.1038/s41592-021-01176-6}{PANOPLY: a cloud-based platform for automated and reproducible proteogenomic data analysis.} \textit{Nature Methods}, 2021, 18(6), 580--582. doi:\nolinkurl{10.1038/s41592-021-01176-6}.
-\item Koper K, Han SW, \textbf{Kothadia R}, et al. \href{https://doi.org/10.1073/pnas.2405524121}{Multisubstrate specificity shaped the complex evolution of the aminotransferase family across the tree of life.} \textit{Proceedings of the National Academy of Sciences}, 2024, 121(26), e2405524121. doi:\nolinkurl{10.1073/pnas.2405524121}.
-\item Bader J, Belak J, Bement M, et al. (including \textbf{Kothadia R}). \href{https://doi.org/10.1145/3624062.3626283}{Novel approaches toward scalable composable workflows in hyper-heterogeneous computing environments.} \textit{Proceedings of the SC '23 Workshops of the International Conference on High Performance Computing, Network, Storage, and Analysis}, 2023, 2097--2108. doi:\nolinkurl{10.1145/3624062.3626283}.
+  \item Developed a \cvstrong{Python} pipeline integrating bioinformatics tools for next-generation sequencing analysis.
+  \item Developed a web-based clinical workbench with \cvstrong{Java/JSF} and designed its user interface with \cvstrong{HTML/CSS}.
+  \item Designed and implemented a relational database in \cvstrong{MySQL} for storing TNBC patient and clinician data.
+  \item Retrieved clinically relevant variant and therapeutic annotations from COSMIC, EmVClass, ClinVar, ClinVitae, and UniProt and harmonized them into personalized oncology reports using \cvstrong{Python}.
 \end{itemize}
 
 \section{Awards}
-\cvplaintextbf{2025 US-RSE Technical Excellence Award, Professional Category} --- JGI Analysis Workflow Service (JAWS) team
-
-\section{Additional Publications}
-\begin{itemize}
-\item Gillette MA, Satpathy S, Cao S, et al. (including \textbf{Kothadia RB}). \href{https://doi.org/10.1016/j.cell.2020.06.013}{Proteogenomic characterization reveals therapeutic vulnerabilities in lung adenocarcinoma.} \textit{Cell}, 2020, 182(1), 200--225.e35. doi:\nolinkurl{10.1016/j.cell.2020.06.013}.
-\item Krug K, Jaehnig EJ, Satpathy S, et al. (including \textbf{Kothadia RB}). \href{https://doi.org/10.1016/j.cell.2020.10.036}{Proteogenomic landscape of breast cancer tumorigenesis and targeted therapy.} \textit{Cell}, 2020, 183(5), 1436--1456.e31. doi:\nolinkurl{10.1016/j.cell.2020.10.036}.
-\item Dou Y, Kawaler EA, Cui Zhou D, et al. (including \textbf{Kothadia R}). \href{https://doi.org/10.1016/j.cell.2020.01.026}{Proteogenomic characterization of endometrial carcinoma.} \textit{Cell}, 2020, 180(4), 729--748.e26. doi:\nolinkurl{10.1016/j.cell.2020.01.026}.
-\item Wang LB, Karpova A, Gritsenko MA, et al. (including \textbf{Kothadia RB}). \href{https://doi.org/10.1016/j.ccell.2021.01.006}{Proteogenomic and metabolomic characterization of human glioblastoma.} \textit{Cancer Cell}, 2021, 39(4), 509--528.e20. doi:\nolinkurl{10.1016/j.ccell.2021.01.006}.
-\end{itemize}
+\awardentry
+  {2025 US-RSE Technical Excellence Award, Professional Category}
+  {}
+  {JAWS Team}
+  {Recognized for technical contributions advancing research software engineering, including scalable, reproducible multi-site scientific workflow execution across DOE computing facilities.}
 
 \section{Education}
-\textbf{New York University}, \textit{M.S. Computer Science}, Courant Institute of Mathematical Sciences, 2018 \\
-\textbf{Savitribai Phule Pune University}, \textit{B.E. Information Technology}, Pune Institute of Computer Technology, 2015
+\educationentry{New York University}{Courant Institute of Mathematical Sciences}{2018}{M.S. Computer Science}
+\vspace{3pt}
+\educationentry{Savitribai Phule Pune University}{Pune Institute of Computer Technology}{2015}{B.E. Information Technology}
+
+\newpage
 
 \section{Technical Skills}
-\textbf{Languages:} Python, Bash, JavaScript, TypeScript, R, SQL, HTML/CSS, WDL \\
-\textbf{Frameworks \& Data:} React, Flask, REST APIs, Elasticsearch, Filebeat, Logstash, MySQL \\
-\textbf{Systems \& Tools:} Linux, Cromwell, Docker, Git, Google Cloud Platform, C/C++, CUDA, Pthreads, OpenMP, MPI
+\skillrow{Languages}{Python, Bash, JavaScript, TypeScript, R, SQL, HTML/CSS, WDL}
+\skillrow{Web \& Data}{React, Flask, REST APIs, Elasticsearch, Filebeat, Logstash, MySQL, Keycloak}
+\skillrow{Workflow \& HPC}{Cromwell, HTCondor, SLURM, PBS, Globus, Apptainer, Docker}
+\skillrow{Platforms}{Linux, Git, CI/CD, Google Cloud Platform, NERSC / HPC environments}
+
+\section{Selected Publications}
+\begin{publicationlist}
+  \publicationitem Cassol D, Clum A, Froula J, Kirton E, \cvstrong{Kothadia R}, et al. \cvlink{https://doi.org/10.1109/eScience65000.2025.00025}{Supporting FAIR scientific workflows with the JGI Analysis Workflow Service (JAWS).} \textit{IEEE International Conference on eScience}, \cvyear{2025}, 141\textendash{}149. \cvdoi{10.1109/eScience65000.2025.00025}
+  \publicationitem Mani DR, Maynard M, \cvstrong{Kothadia R}, et al. \cvlink{https://doi.org/10.1038/s41592-021-01176-6}{PANOPLY: a cloud-based platform for automated and reproducible proteogenomic data analysis.} \textit{Nature Methods}, \cvyear{2021}, 18(6), 580\textendash{}582. \cvdoi{10.1038/s41592-021-01176-6}
+  \publicationitem Koper K, Han SW, \cvstrong{Kothadia R}, et al. \cvlink{https://doi.org/10.1073/pnas.2405524121}{Multisubstrate specificity shaped the complex evolution of the aminotransferase family across the tree of life.} \textit{Proceedings of the National Academy of Sciences}, \cvyear{2024}, 121(26), e2405524121. \cvdoi{10.1073/pnas.2405524121}
+  \publicationitem Bader J, Belak J, Bement M, \textellipsis{} \cvstrong{Kothadia R}, et al. \cvlink{https://doi.org/10.1145/3624062.3626283}{Novel approaches toward scalable composable workflows in hyper-heterogeneous computing environments.} \textit{Proceedings of the SC '23 Workshops of the International Conference on High Performance Computing, Network, Storage, and Analysis}, \cvyear{2023}, 2097\textendash{}2108. \cvdoi{10.1145/3624062.3626283}
+\end{publicationlist}
+
+\vspace{-2pt}
+\section{Additional Publications}
+\begin{publicationlist}
+  \publicationitem Gillette MA, Satpathy S, Cao S, \textellipsis{} \cvstrong{Kothadia RB}, et al. \cvlink{https://doi.org/10.1016/j.cell.2020.06.013}{Proteogenomic characterization reveals therapeutic vulnerabilities in lung adenocarcinoma.} \textit{Cell}, \cvyear{2020}, 182(1), 200\textendash{}225.e35. \cvdoi{10.1016/j.cell.2020.06.013}
+  \publicationitem Krug K, Jaehnig EJ, Satpathy S, \textellipsis{} \cvstrong{Kothadia RB}, et al. \cvlink{https://doi.org/10.1016/j.cell.2020.10.036}{Proteogenomic landscape of breast cancer tumorigenesis and targeted therapy.} \textit{Cell}, \cvyear{2020}, 183(5), 1436\textendash{}1456.e31. \cvdoi{10.1016/j.cell.2020.10.036}
+  \publicationitem Dou Y, Kawaler EA, Cui Zhou D, \textellipsis{} \cvstrong{Kothadia R}, et al. \cvlink{https://doi.org/10.1016/j.cell.2020.01.026}{Proteogenomic characterization of endometrial carcinoma.} \textit{Cell}, \cvyear{2020}, 180(4), 729\textendash{}748.e26. \cvdoi{10.1016/j.cell.2020.01.026}
+  \publicationitem Wang LB, Karpova A, Gritsenko MA, \textellipsis{} \cvstrong{Kothadia RB}, et al. \cvlink{https://doi.org/10.1016/j.ccell.2021.01.006}{Proteogenomic and metabolomic characterization of human glioblastoma.} \textit{Cancer Cell}, \cvyear{2021}, 39(4), 509\textendash{}528.e20. \cvdoi{10.1016/j.ccell.2021.01.006}
+\end{publicationlist}
 
 \end{document}
