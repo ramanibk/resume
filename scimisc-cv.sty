@@ -31,22 +31,48 @@
   BoldItalicFont=SourceSans3-Bold.otf
 ]
 \newfontfamily\cvsemibold{SourceSans3-Semibold.otf}[Path=assets/fonts/]
-\newfontfamily\cvemployerfont{SourceSans3-Bold.otf}[
-  Path=assets/fonts/,
-  FakeBold=0.35
-]
+\newfontfamily\cvemployerfont{SourceSans3-Semibold.otf}[Path=assets/fonts/]
+\newfontface\cvsectiontype{Baskerville SemiBold Italic}
 \renewcommand{\familydefault}{\sfdefault}
 
-\definecolor{cvblack}{HTML}{111111}
-\definecolor{cvbody}{HTML}{333333}
-\definecolor{cvemphasis}{HTML}{444444}
-\definecolor{cvgold}{HTML}{947526}
-\definecolor{cvmuted}{HTML}{707070}
-\definecolor{cvseparator}{HTML}{A0A0A0}
+\providecommand{\cvpaperhex}{FBF8F4}
+\providecommand{\cvheadinghex}{111111}
+\providecommand{\cvemployerhex}{222222}
+\providecommand{\cvbodyhex}{333333}
+\providecommand{\cvemphasishex}{444444}
+\providecommand{\cvaccenthex}{77736F}
+\providecommand{\cvmutedhex}{686868}
+\providecommand{\cvseparatorhex}{A0A0A0}
+\definecolor{cvblack}{HTML}{\cvheadinghex}
+\definecolor{cvemployer}{HTML}{\cvemployerhex}
+\definecolor{cvbody}{HTML}{\cvbodyhex}
+\definecolor{cvemphasis}{HTML}{\cvemphasishex}
+\definecolor{cvpaper}{HTML}{\cvpaperhex}
+\definecolor{cvgold}{HTML}{\cvaccenthex}
+\definecolor{cvmuted}{HTML}{\cvmutedhex}
+\definecolor{cvseparator}{HTML}{\cvseparatorhex}
+\providecommand{\cvlinkhex}{838960}
+\providecommand{\cvbodypointsize}{11}
+\providecommand{\cvbodylinesize}{12.3}
+\providecommand{\cvpublicationpointsize}{11}
+\providecommand{\cvpublicationlinesize}{13.1}
+\providecommand{\cvpublicationbreak}{\newpage}
+\providecommand{\cvafterawardsbreak}{}
+\providecommand{\cvitemsep}{3.5pt}
+\providecommand{\cvjobsepspace}{10.5pt}
+\providecommand{\cvsectionbeforespace}{14pt}
+\providecommand{\cvsectionafterspace}{7.3pt}
+\providecommand{\cvdoiafterspace}{8pt}
+\providecommand{\cvbodyalignment}{\raggedright}
+\definecolor{cvlinkaccent}{HTML}{\cvlinkhex}
 \color{cvbody}
+\pagecolor{cvpaper}
 
 \geometry{a4paper,left=0.56in,right=0.56in,top=0.48in,bottom=0.55in,footskip=18pt}
-\hypersetup{colorlinks=true,urlcolor=cvemphasis,linkcolor=cvemphasis}
+\hypersetup{
+  colorlinks=false,
+  pdfborder={0 0 0}
+}
 \urlstyle{same}
 
 \def\scimisc@cvname{}
@@ -56,7 +82,7 @@
 
 \newcommand{\cvnamefont}{\bfseries\fontsize{23}{24.5}\selectfont\color{cvblack}}
 \newcommand{\cvcontactfont}{\fontsize{8.4}{10.2}\selectfont\color{cvmuted}}
-\newcommand{\cvdate}[1]{{\fontsize{8.2}{9.4}\selectfont\color{cvmuted}#1}}
+\newcommand{\cvdate}[1]{{\fontsize{8.8}{10}\selectfont\color{cvmuted}#1}}
 \newcommand{\cvbold}[1]{{\bfseries\color{cvblack}#1}}
 \newcommand{\cvstrong}[1]{{\cvsemibold\color{cvemphasis}#1}}
 \newcommand{\cvyear}[1]{{\cvsemibold #1}}
@@ -73,8 +99,8 @@
 \newcommand{\cvdoi}[1]{%
   \par\vspace{1pt}%
   \noindent\hspace*{\cvpublicationhang}%
-  {\fontsize{9.1}{10.2}\selectfont\color{cvmuted}\href{https://doi.org/#1}{doi:#1}\par}%
-  \vspace{8pt}%
+    {\fontsize{9.1}{10.2}\selectfont\color{cvmuted}\cvlink{https://doi.org/#1}{doi:#1}\par}%
+  \vspace{\cvdoiafterspace}%
 }
 \newcommand{\cvnote}[1]{%
   \par\vspace{1pt}{\fontsize{9.1}{10.2}\selectfont\itshape\color{cvmuted}#1\par}%
@@ -91,27 +117,28 @@
     {\cvcontactfont\scimisc@cvpersonalinfo\par}%
   \end{minipage}\par
   \vspace{11pt}%
+  \fontsize{\cvbodypointsize}{\cvbodylinesize}\selectfont
 }
 
 \NewDocumentCommand{\cvsubsection}{m o o o}{%
   \needspace{4\baselineskip}%
-  \noindent{\cvemployerfont\fontsize{10.6}{11.5}\selectfont\color{cvblack}#1}%
+  \noindent{\cvemployerfont\fontsize{11.4}{12.2}\selectfont\color{cvemployer}#1}%
   \IfValueT{#2}{\hfill\cvdate{#2}}%
   \par\vspace{2pt}%
-  \IfValueT{#3}{{\fontsize{9.8}{10.8}\selectfont\itshape\color{cvmuted}#3}}%
-  \IfValueT{#4}{\hfill{\fontsize{8.9}{9.9}\selectfont\itshape\color{cvmuted}#4}}%
+  \IfValueT{#3}{{\fontsize{10}{11}\selectfont\itshape\color{cvmuted}#3}}%
+  \IfValueT{#4}{\hfill{\fontsize{9.2}{10.2}\selectfont\itshape\color{cvmuted}#4}}%
   \par
 }
 
 \newcommand{\educationentry}[4]{%
-  \noindent{\cvsemibold\fontsize{10.6}{11.5}\selectfont\color{cvblack}#1}%
+  \noindent{\cvsemibold\fontsize{10.8}{11.7}\selectfont\color{cvemployer}#1}%
   {\color{cvseparator}\enspace\textperiodcentered\enspace}%
-  {\fontsize{9.2}{10.2}\selectfont\itshape\color{cvmuted}#2}%
-  \hfill{\fontsize{8.2}{9.4}\selectfont\color{cvmuted}#3}\par
-  {\fontsize{9.8}{10.8}\selectfont\itshape\color{cvmuted}#4\par}%
+  {\fontsize{9.6}{10.6}\selectfont\itshape\color{cvmuted}#2}%
+  \hfill{\fontsize{8.8}{10}\selectfont\color{cvmuted}#3}\par
+  {\fontsize{10}{11}\selectfont\itshape\color{cvmuted}#4\par}%
 }
 
-\newcommand{\jobseparator}{\par\vspace{10.5pt}}
+\newcommand{\jobseparator}{\par\vspace{\cvjobsepspace}}
 
 \newcommand{\awardentry}[4]{%
   \noindent{\cvbold{#1}}\hfill\cvdate{#2}\par
@@ -120,18 +147,18 @@
 }
 
 \newlength{\cvsectiontitlewidth}
-\newcommand{\cvsectionfont}{\cvsemibold\addfontfeatures{LetterSpace=1.5}}
+\newcommand{\cvsectionfont}{\cvsectiontype\addfontfeatures{LetterSpace=0.25}}
 \newcommand{\cvsectionheading}[1]{%
-  \settowidth{\cvsectiontitlewidth}{{\cvsectionfont\MakeUppercase{#1}}}%
-  \noindent{\cvsectionfont\MakeUppercase{#1}}%
+  \settowidth{\cvsectiontitlewidth}{{\cvsectionfont #1}}%
+  \noindent{\cvsectionfont #1}%
   \hspace{0.8em}%
   \raisebox{0.55ex}{\color{cvgold}%
-    \rule{\dimexpr\linewidth-\cvsectiontitlewidth-0.8em\relax}{0.45pt}}%
+    \rule{\dimexpr\linewidth-\cvsectiontitlewidth-0.8em\relax}{0.9pt}}%
 }
 \titleformat{\section}
-  {\fontsize{10.2}{11}\selectfont\color{cvblack}}
+  {\fontsize{16.2}{17.2}\selectfont\color{cvblack}}
   {}{0pt}{\cvsectionheading{#1}}
-\titlespacing*{\section}{0pt}{14pt}{7.3pt}
+\titlespacing*{\section}{0pt}{\cvsectionbeforespace}{\cvsectionafterspace}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
@@ -139,7 +166,7 @@
 \setlist[itemize]{
   label={\color{cvemphasis}\small\textbullet},
   leftmargin=1.16em,
-  itemsep=3.5pt,
+  itemsep=\cvitemsep,
   topsep=1.4pt,
   parsep=0pt,
   partopsep=0pt
@@ -148,17 +175,22 @@
 \newenvironment{publicationlist}{%
   \par
   \begingroup
-  \fontsize{10.6}{12.8}\selectfont
+  \setcounter{cvpublication}{0}%
+  \fontsize{\cvpublicationpointsize}{\cvpublicationlinesize}\selectfont
 }{%
   \par\endgroup
 }
 
+\newcounter{cvpublication}
+\setlength{\cvpublicationhang}{0.36in}
 \newcommand{\publicationitem}{%
+  \stepcounter{cvpublication}%
   \par\noindent\hangindent=\cvpublicationhang\hangafter=1\relax
+  \makebox[\cvpublicationhang][l]{{\fontsize{9.1}{10}\selectfont\color{cvmuted}[\arabic{cvpublication}]}}%
 }
 
 \newcommand{\skillrow}[2]{%
-  \noindent\makebox[1.24in][l]{{\cvsemibold\fontsize{8.6}{10}\selectfont\color{cvemphasis}\MakeUppercase{#1}}}%
+  \noindent\makebox[1.24in][l]{{\cvsemibold\fontsize{9.1}{10.4}\selectfont\color{cvemphasis}\MakeUppercase{#1}}}%
   {\color{cvbody}#2}\par\vspace{1.4pt}%
 }
 
@@ -168,5 +200,11 @@
 \renewcommand{\footrulewidth}{0pt}
 \fancyfoot[R]{{\cvsemibold\fontsize{8.2}{9}\selectfont\color{cvmuted}\thepage\ / \pageref*{LastPage}}}
 
-\AtBeginDocument{\fontsize{11}{12.3}\selectfont\raggedright}
+\AtBeginDocument{%
+  \fontsize{11}{12.3}\selectfont
+  \hyphenpenalty=10000
+  \exhyphenpenalty=10000
+  \tolerance=2200
+  \cvbodyalignment
+}
 \setcounter{secnumdepth}{0}
